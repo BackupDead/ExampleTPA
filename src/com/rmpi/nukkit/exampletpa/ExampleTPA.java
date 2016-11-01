@@ -6,10 +6,8 @@ import cn.nukkit.event.Listener;
 import cn.nukkit.event.player.PlayerJoinEvent;
 import cn.nukkit.event.player.PlayerQuitEvent;
 import cn.nukkit.plugin.PluginBase;
-import com.rmpi.nukkit.exampletpa.commands.tpa;
-import com.rmpi.nukkit.exampletpa.commands.tpaccept;
-import com.rmpi.nukkit.exampletpa.commands.tpahere;
-import com.rmpi.nukkit.exampletpa.commands.tpdeny;
+
+import com.rmpi.nukkit.exampletpa.commands.*;
 import com.rmpi.nukkit.exampletpa.teleport.TeleportManager;
 import com.rmpi.nukkit.simplecommand.CommandClassCorruptedException;
 import com.rmpi.nukkit.simplecommand.CommandRegisterer;
@@ -27,10 +25,11 @@ public class ExampleTPA extends PluginBase implements Listener {
         teleportMgr = new TeleportManager();
 
         try {
-            CommandRegisterer.register(tpa.class);
-            CommandRegisterer.register(tpahere.class);
-            CommandRegisterer.register(tpaccept.class);
-            CommandRegisterer.register(tpdeny.class);
+            CommandRegisterer.register(Tpa.class);
+            CommandRegisterer.register(Tpahere.class);
+            CommandRegisterer.register(Tpaccept.class);
+            CommandRegisterer.register(Tpdeny.class);
+            CommandRegisterer.register(Tplist.class);
         } catch (CommandClassCorruptedException e) {
             getLogger().error("An error occured while registering commands.", e);
             getServer().getPluginManager().disablePlugin(this);

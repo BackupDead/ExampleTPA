@@ -5,7 +5,8 @@ import cn.nukkit.permission.Permission;
 import com.rmpi.nukkit.exampletpa.ExampleTPA;
 import com.rmpi.nukkit.simplecommand.ParameterDefine;
 
-public class tpdeny {
+public class Tpdeny {
+    public final static String name = "tpdeny";
     public final static String description = "Denies teleport request";
     public final static String permissionDefault = Permission.DEFAULT_TRUE;
 

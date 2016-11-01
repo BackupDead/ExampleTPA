@@ -5,7 +5,8 @@ import cn.nukkit.permission.Permission;
 import com.rmpi.nukkit.exampletpa.ExampleTPA;
 import com.rmpi.nukkit.simplecommand.ParameterDefine;
 
-public class tpaccept {
+public class Tpaccept {
+    public final static String name = "tpaccept";
     public final static String description = "Accepts teleport request";
     public final static String permissionDefault = Permission.DEFAULT_TRUE;
 

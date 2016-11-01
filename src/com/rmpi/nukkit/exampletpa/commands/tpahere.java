@@ -7,7 +7,8 @@ import com.rmpi.nukkit.exampletpa.teleport.TeleportDirection;
 import com.rmpi.nukkit.exampletpa.teleport.TeleportRequest;
 import com.rmpi.nukkit.simplecommand.ParameterDefine;
 
-public class tpahere {
+public class Tpahere {
+    public final static String name = "tpahere";
     public final static String description = "Sends spawn request";
     public final static String permissionDefault = Permission.DEFAULT_TRUE;
 

@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class TeleportManager {
     private Map<Player, List<TeleportRequest>> requests = new HashMap<>();
@@ -64,5 +65,37 @@ public class TeleportManager {
             return false;
         requests.get(sender).remove(index);
         return true;
+    }
+
+    public String dump(Player sender) {
+        return "Request list:\n"
+                + (
+                        requests.get(sender) == null
+                                ? "" : requests.get(sender)
+                                .parallelStream()
+                                .map(t -> {
+                                    StringBuilder requestDumpBuilder = new StringBuilder();
+                                    requestDumpBuilder
+                                            .append(t.sender.getName())
+                                            .append(" ");
+
+                                    switch (t.direction) {
+                                        case TELEPORT:
+                                            requestDumpBuilder.append("->");
+                                            break;
+                                        case SPAWN:
+                                            requestDumpBuilder.append("<-");
+                                            break;
+                                        default:
+                                            requestDumpBuilder.append("UNDEFINED");
+                                    }
+
+                                    requestDumpBuilder
+                                            .append(" ")
+                                            .append(t.target.getName());
+                                    return requestDumpBuilder.toString();
+                                })
+                                .collect(Collectors.joining("\n"))
+        );
     }
 }

@@ -7,7 +7,8 @@ import com.rmpi.nukkit.exampletpa.teleport.TeleportDirection;
 import com.rmpi.nukkit.exampletpa.teleport.TeleportRequest;
 import com.rmpi.nukkit.simplecommand.ParameterDefine;
 
-public class tpa {
+public class Tpa {
+    public final static String name = "tpa";
     public final static String description = "Sends teleport request";
     public final static String permissionDefault = Permission.DEFAULT_TRUE;
 
