@@ -1,0 +1,4 @@
+name: ExampleTPA
+version: "1.0"
+main: com.rmpi.nukkit.exampletpa.ExampleTPA
+api: 1.0.0
